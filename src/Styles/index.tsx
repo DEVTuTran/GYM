@@ -99,6 +99,12 @@ export const StyleLable = styled(Typography)(() => ({
   marginRight: 12,
 }));
 
+export const StyleTitle = styled(Typography)(() => ({
+  fontSize: 22,
+  paddingBottom: 10,
+  borderBottom: "0.5px solid",
+}));
+
 export const StyledButtonCancel = styled(Button)(
   ({ theme, variant = "outlined" }) =>
     variant === "outlined" && {

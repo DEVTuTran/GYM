@@ -51,14 +51,19 @@ const palette: PaletteOptions = {
 const themes = createTheme({
   palette,
   typography: {
+    h1: {
+      fontSize: "40px",
+      fontWeight: 500,
+    },
     h4: {
       fontSize: "34px",
-      lineHeight: "41.99px",
+      lineHeight: "41px",
     },
     h5: {
       fontSize: "24px",
-      lineHeight: "32.02px",
+      lineHeight: "32px",
     },
+    subtitle1: {},
   },
   components: {
     MuiTextField: {
@@ -78,16 +83,18 @@ const themes = createTheme({
         },
       ],
     },
-    MuiSwitch: {
+    MuiCardContent: {
       styleOverrides: {
         root: {
-          // '.Mui-checked.Mui-disabled': {
-          //   color: '#F5F5F5 !important'
-          // },
-          // '.Mui-checked.Mui-disabled+.MuiSwitch-track': {
-          //   background: '#000000 !important'
-          // }
+          "&:last-child": {
+            paddingBottom: "unset",
+          },
         },
+      },
+    },
+    MuiSwitch: {
+      styleOverrides: {
+        root: {},
       },
     },
   },

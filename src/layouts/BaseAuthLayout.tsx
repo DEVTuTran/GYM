@@ -163,7 +163,7 @@ export default function BaseAuthLayout({ children }: { children: ReactNode }) {
               <MenuIcon />
             </IconButton>
             <Typography variant="h6" noWrap component="div">
-              Mini variant drawer
+              GYM
             </Typography>
           </Toolbar>
           <Stack
@@ -237,7 +237,14 @@ export default function BaseAuthLayout({ children }: { children: ReactNode }) {
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <DrawerHeader />
-        <Box>{children}</Box>
+        <Box
+          sx={{
+            px: 4,
+            py: 5,
+          }}
+        >
+          {children}
+        </Box>
       </Box>
       <ModalSetup open={isShowPopup} setOpen={togglePopup} />
     </Box>
