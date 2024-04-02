@@ -83,15 +83,6 @@ const themes = createTheme({
         },
       ],
     },
-    MuiCardContent: {
-      styleOverrides: {
-        root: {
-          "&:last-child": {
-            paddingBottom: "unset",
-          },
-        },
-      },
-    },
     MuiSwitch: {
       styleOverrides: {
         root: {},

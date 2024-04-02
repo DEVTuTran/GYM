@@ -1,21 +1,21 @@
-import { Navigate, Outlet } from 'react-router-dom'
-import { useProfileQuery } from '../app/services/auth'
-import React from 'react'
-import { CircularProgress } from '@mui/material'
+import { Navigate, Outlet } from "react-router-dom";
+import { CircularProgress } from "@mui/material";
+import { ENDPOINT } from "constants/endpoint";
 
 function ProtectedRoute() {
-  const { data, isLoading, isFetching } = useProfileQuery(null, {
-    skip: false,
-    refetchOnMountOrArgChange: true
-  })
+  const { data, isLoading, isFetching } = {
+    data: {},
+    isFetching: false,
+    isLoading: false,
+  };
 
-  const loading = isLoading || isFetching
+  const loading = isLoading || isFetching;
 
   if (loading) {
-    return <CircularProgress />
+    return <CircularProgress />;
   }
 
-  return data ? <Outlet /> : <Navigate to='/login' replace />
+  return data ? <Outlet /> : <Navigate to={ENDPOINT.LOGIN} replace />;
 }
 
-export default ProtectedRoute
+export default ProtectedRoute;

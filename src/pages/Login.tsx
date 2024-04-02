@@ -3,17 +3,12 @@ import BaseInputStrict from "../components/common/BaseInputStrict";
 import { useForm } from "react-hook-form";
 import useFormUI from "../hooks/useFormUI";
 import { EFormUIState } from "../enums";
-import { useLoginMutation } from "../app/services/auth";
 import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
-import { ENDPOINT } from "../constants/endpoint";
 import { yupResolver } from "@hookform/resolvers/yup";
 import loginSchema from "../libs/validation/login";
-import headImg from "../assets/img/login-logo.png";
 import { FLexBox } from "../Styles";
 
 function Login() {
-  const [login] = useLoginMutation();
   const navigate = useNavigate();
   const form = useForm<{ email: string; password: string }>({
     defaultValues: {
@@ -28,12 +23,7 @@ function Login() {
   });
 
   const onSubmit = (data: { email: string; password: string }) => {
-    login(data)
-      .unwrap()
-      .then(() => {
-        toast.success("ログインできました。");
-        navigate(`/${ENDPOINT.FRANCHISES}`);
-      });
+    console.log(data);
   };
   return (
     <Box
@@ -51,7 +41,8 @@ function Login() {
       <Box width={500}>
         <FLexBox>
           <Box mb={2}>
-            <img src={headImg} alt="logo" width={120} />
+            {/* <img src={headImg} alt="logo" width={120} /> */}
+            logo
           </Box>
         </FLexBox>
         <Typography sx={{ mb: 1, fontSize: "24px" }}>ログイン</Typography>

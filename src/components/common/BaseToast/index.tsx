@@ -1,7 +1,6 @@
 import { CheckCircleOutline, ErrorOutline } from "@mui/icons-material";
 import { Alert, Snackbar } from "@mui/material";
-
-import { useTimeout } from "hooks/useTimeout";
+import useTimeout from "hooks/useTimeout";
 
 interface BaseToastProps {
   handleClose: Function;
@@ -11,6 +10,7 @@ interface BaseToastProps {
 }
 export const BaseToast = (props: BaseToastProps) => {
   const { handleClose, message, severity } = props;
+
   useTimeout(() => handleClose(), 5000);
   return (
     <Snackbar open={true} className="relative">
@@ -19,7 +19,7 @@ export const BaseToast = (props: BaseToastProps) => {
         sx={{ width: 600 }}
         iconMapping={{
           success: <CheckCircleOutline fontSize="inherit" />,
-          error: <ErrorOutline fontSize="inherit" />
+          error: <ErrorOutline fontSize="inherit" />,
         }}
         onClose={() => handleClose()}
       >

@@ -20,48 +20,59 @@ import { CSSObject, Theme, styled } from "@mui/material/styles";
 import useToggle from "hooks/useToggle";
 import { Paper, Stack } from "@mui/material";
 import AccountIcon from "components/AccountIcon";
-import { HelpOutline } from "@mui/icons-material";
+import {
+  AnalyticsOutlined,
+  EventAvailable,
+  FitnessCenterOutlined,
+  HelpOutline,
+  PeopleAltOutlined,
+  Person,
+  RoomPreferencesOutlined,
+  StoreOutlined,
+} from "@mui/icons-material";
 import BaseSelectField from "components/common/BaseSelectField";
 import { FLexBox, StyleLable } from "Styles";
-import { ModalSetup } from "components/ModalSetup";
+import { ModalSetup } from "components/Modal/ModalSetup";
+import { ENDPOINT } from "constants/endpoint";
 
 const drawerWidth = 240;
 
 const siderItems = [
   {
     label: "ダッシュボード",
-    href: "/",
-    icon: <MailIcon />,
+    href: ENDPOINT.DASHBOARD,
+    icon: <EventAvailable />,
   },
   {
     label: "イベント管理",
-    href: "/tt",
-    icon: <MailIcon />,
+    href: ENDPOINT.USERS,
+    icon: <PeopleAltOutlined />,
   },
   {
     label: "アカウント管理1",
-    href: "/hh",
-    icon: <MailIcon />,
+    href: ENDPOINT.MACHINES,
+    icon: <FitnessCenterOutlined />,
   },
   {
     label: "アカウント管理2",
-    href: "/hh",
-    icon: <MailIcon />,
-  },
-  {
-    label: "アカウント管理3",
-    href: "/hh",
-    icon: <MailIcon />,
+    href: ENDPOINT.STAFFS,
+    icon: <Person />,
   },
   {
     label: "アカウント管理4",
-    href: "/hh",
-    icon: <MailIcon />,
+    href: ENDPOINT.FACILITIES,
+    icon: <RoomPreferencesOutlined />,
   },
   {
+    label: "アカウント管理3",
+    href: ENDPOINT.BUSINESS,
+    icon: <StoreOutlined />,
+  },
+
+  {
     label: "アカウント管理5",
-    href: "/hh",
-    icon: <MailIcon />,
+    href: ENDPOINT.ANALYTICS,
+    icon: <AnalyticsOutlined />,
   },
 ];
 
@@ -207,7 +218,7 @@ export default function BaseAuthLayout({ children }: { children: ReactNode }) {
               }}
               component={Link}
               to={sider.href}
-              selected={selectedPath?.includes(sider.href)}
+              selected={selectedPath === sider.href}
               onClick={() => handleListItemClick(sider.href)}
             >
               <ListItemButton

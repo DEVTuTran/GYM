@@ -1,5 +1,5 @@
 import { BaseToast } from "components/common/BaseToast";
-import { useTimeout } from "hooks/useTimeout";
+import useTimeout from "hooks/useTimeout";
 import { createContext, useContext, useMemo, useState } from "react";
 import { generateUEID } from "utils/common";
 

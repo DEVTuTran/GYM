@@ -3,8 +3,8 @@ import Fade from "@mui/material/Fade";
 import Typography from "@mui/material/Typography";
 import { useForm } from "react-hook-form";
 
-import BaseModal from "./common/BaseModal";
-import BaseSelect from "./common/BaseSelectField/BaseSelectStrict";
+import BaseModal from "../common/BaseModal";
+import BaseSelect from "../common/BaseSelectField/BaseSelectStrict";
 import { FLexBox, StyleLable } from "Styles";
 
 type IProps = {

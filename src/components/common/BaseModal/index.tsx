@@ -1,3 +1,5 @@
+import { useMemo } from "react";
+
 import { StyledComponent } from "@emotion/styled";
 import {
   ButtonBaseOwnProps,
@@ -16,8 +18,8 @@ import Button, {
 import Fade from "@mui/material/Fade";
 import Modal from "@mui/material/Modal";
 import Typography from "@mui/material/Typography";
-import { StyledButtonCancel, StyledButtonSubmit } from "Styles";
-import * as React from "react";
+
+import { StyledButtonConfirm, StyledButtonDefault } from "Styles";
 
 interface IProps {
   open: boolean;
@@ -54,7 +56,7 @@ export default function BaseModal({
   backdropClick = true,
   ...props
 }: IProps) {
-  const { modalStyle, titleWrapperStyle } = React.useMemo(() => {
+  const { modalStyle, titleWrapperStyle } = useMemo(() => {
     let modalWidthStyle: SxProps<Theme> = {};
 
     if (props.maxWidth) {
@@ -137,16 +139,16 @@ export default function BaseModal({
             gap={3}
           >
             {showBtnCancel && (
-              <StyledButtonCancel
+              <StyledButtonDefault
                 onClick={props.onCancel}
                 startIcon={props.cancelStartIcon}
                 {...props.cancelProps}
               >
                 {props.cancelText || "キャンセル"}
-              </StyledButtonCancel>
+              </StyledButtonDefault>
             )}
             {showBtnOk && (
-              <StyledButtonSubmit
+              <StyledButtonConfirm
                 variant="contained"
                 color={props.isBgError ? "error" : "primary"}
                 onClick={props.onOk}
@@ -154,7 +156,7 @@ export default function BaseModal({
                 {...props.okProps}
               >
                 {props.okText || "変更を確認する"}
-              </StyledButtonSubmit>
+              </StyledButtonConfirm>
             )}
           </Stack>
         </Box>

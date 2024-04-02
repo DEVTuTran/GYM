@@ -105,7 +105,7 @@ export const StyleTitle = styled(Typography)(() => ({
   borderBottom: "0.5px solid",
 }));
 
-export const StyledButtonCancel = styled(Button)(
+export const StyledButtonDefault = styled(Button)(
   ({ theme, variant = "outlined" }) =>
     variant === "outlined" && {
       background: theme.palette.background.paper,
@@ -125,7 +125,43 @@ export const StyledButtonCancel = styled(Button)(
     }
 );
 
-export const StyledButtonSubmit = styled(Button)(
+export const StyledButtonText = styled(Button)(
+  ({ theme, variant = "text" }) =>
+    variant === "text" && {
+      color: theme.palette.text.secondary,
+      "&:hover": {
+        background: theme.palette.info.dark,
+      },
+      "&:disabled": {
+        color: theme.palette.action.disabled,
+        ".MuiButton-startIcon": {
+          color: "#fff",
+        },
+      },
+    }
+);
+
+export const StyledButtonCancel = styled(Button)(
+  ({ theme, variant = "outlined" }) =>
+    variant === "outlined" && {
+      background: theme.palette.background.paper,
+      color: theme.palette.error.main,
+      border: "1px solid",
+      borderColor: theme.palette.error.main,
+      borderRadius: 5,
+      "&:hover": {
+        background: theme.palette.error.dark,
+      },
+      "&:disabled": {
+        color: theme.palette.action.disabled,
+        ".MuiButton-startIcon": {
+          color: "#fff",
+        },
+      },
+    }
+);
+
+export const StyledButtonConfirm = styled(Button)(
   ({ theme, variant = "outlined" }) =>
     variant === "outlined" && {
       background: theme.palette.info.main,

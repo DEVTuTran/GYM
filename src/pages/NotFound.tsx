@@ -1,12 +1,11 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { Typography } from '@mui/material'
+import { Box, Typography } from "@mui/material";
+import { Link } from "react-router-dom";
 
-const NotFound = () => (
-  <div>
-    <Typography>404 Page not found</Typography>
-    <Link to='/'>Go Home</Link>
-  </div>
-)
-
-export default NotFound
+export function NotFound() {
+  return (
+    <Box>
+      <Typography>404 Page not found</Typography>
+      <Link to="/">Go Home</Link>
+    </Box>
+  );
+}

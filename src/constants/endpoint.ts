@@ -1,12 +1,17 @@
 export const ENDPOINT = {
-  LOGIN: 'login',
-  FRANCHISES: 'franchises',
-  SUCCESS: 'success'
-}
+  LOGIN: "/login",
+  DASHBOARD: "/",
+  USERS: "/users",
+  MACHINES: "/machines",
+  STAFFS: "/staffs",
+  FACILITIES: "/facilities",
+  BUSINESS: "/business",
+  ANALYTICS: "/analytics",
+};
 
 export const API_ENDPOINT = {
-  AUTH_LOGIN: 'auth/login',
-  AUTH_PROFILE: 'auth/profile',
-  CATEGORIES: 'categories',
-  FRANCHISES: 'franchises'
-}
+  AUTH_LOGIN: "auth/login",
+  AUTH_PROFILE: "auth/profile",
+  CATEGORIES: "categories",
+  FRANCHISES: "franchises",
+};
