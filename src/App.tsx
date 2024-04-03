@@ -1,24 +1,24 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes } from 'react-router-dom'
 
-import ProtectedRoute from "guards/ProtectedRoute";
-import { ENDPOINT } from "./constants/endpoint";
+import ProtectedRoute from 'guards/ProtectedRoute'
+import { ENDPOINT } from './constants/endpoint'
 
-import BaseAuthLayout from "layouts/BaseAuthLayout";
+import BaseAuthLayout from 'layouts/BaseAuthLayout'
 
-import Login from "pages/Login";
-import Dashboard from "pages/Dashboard";
-import { NotFound } from "pages/NotFound";
-import { Users } from "pages/Users";
-import { Machines } from "pages/Machines";
-import { Staffs } from "pages/Staffs";
-import { Business } from "pages/Bussines";
-import { Analytics } from "pages/Analytics";
-import { Facilities } from "pages/Facilities";
+import Login from 'pages/Login'
+import Dashboard from 'pages/Dashboard'
+import { NotFound } from 'pages/NotFound'
+import { Users } from 'pages/Users'
+import { Machines } from 'pages/Machines'
+import { Staffs } from 'pages/Staffs'
+import { Business } from 'pages/Bussines'
+import { Analytics } from 'pages/Analytics'
+import { Facilities } from 'pages/Facilities'
 
 function App() {
   return (
     <Routes>
-      <Route path="*" element={<NotFound />} />
+      <Route path='*' element={<NotFound />} />
       <Route path={ENDPOINT.LOGIN} element={<Login />} />
       {/* <Route element={<ProtectedRoute />}>
         <Route
@@ -87,7 +87,7 @@ function App() {
         }
       />
     </Routes>
-  );
+  )
 }
 
-export default App;
+export default App

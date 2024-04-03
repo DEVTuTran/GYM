@@ -2,7 +2,32 @@
   width: 100%;
 }
 
+@font-face {
+  font-family: "Kosugi";
+  font-style: normal;
+  font-weight: normal;
+  src:
+    local("Kosugi"),
+    url("./assets/fonts/Kosugi/Kosugi-Regular.ttf") format("woff");
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: normal;
+  src:
+    local("Roboto"),
+    url("./assets/fonts/Roboto/Roboto-Regular.ttf") format("woff");
+}
+
+html:lang(ja) {
+  font-family: "Kosugi";
+}
+
+html:lang(en) {
+  font-family: "Roboto";
+}
+
 body {
   margin: 0;
-  font-family: 'Roboto', sans-serif;
 }

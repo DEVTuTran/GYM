@@ -1,42 +1,35 @@
-import {
-  Select,
-  SelectProps,
-  MenuItem,
-  InputLabel,
-  FormControl,
-  OutlinedInput,
-} from "@mui/material";
-import { styled } from "@mui/material/styles";
+import { Select, SelectProps, MenuItem, InputLabel, FormControl, OutlinedInput } from '@mui/material'
+import { styled } from '@mui/material/styles'
 
 type BaseSelectFieldProps = {
-  name?: any;
-  label?: string;
+  name?: any
+  label?: string
   options: {
-    value: string | number | undefined;
-    label: string | number | undefined;
-  }[];
-  value?: string | number;
-  disableItems?: number[];
-} & SelectProps;
+    value: string | number | undefined
+    label: string | number | undefined
+  }[]
+  value?: string | number
+  disableItems?: number[]
+} & SelectProps
 
 const MenuItemStyled = styled(MenuItem)({
   fontSize: 15,
   height: 30,
   borderRadius: 0,
-  boxShadow: "none",
-  "& .MuiList-padding": {
-    padding: 0,
-  },
-});
+  boxShadow: 'none',
+  '& .MuiList-padding': {
+    padding: 0
+  }
+})
 
 const BaseSelectField = (props: BaseSelectFieldProps) => {
-  const { name, label, options, disableItems, sx, ...rest } = props;
+  const { name, label, options, disableItems, sx, ...rest } = props
   return (
     <>
       <FormControl fullWidth>
-        <InputLabel id="name-label">{label}</InputLabel>
+        <InputLabel id='name-label'>{label}</InputLabel>
         <Select
-          labelId="name-label"
+          labelId='name-label'
           value={props.defaultValue}
           displayEmpty
           {...rest}
@@ -56,7 +49,7 @@ const BaseSelectField = (props: BaseSelectFieldProps) => {
         </Select>
       </FormControl>
     </>
-  );
-};
+  )
+}
 
-export default BaseSelectField;
+export default BaseSelectField

@@ -1,33 +1,21 @@
-import {
-  SelectProps,
-  Select,
-  MenuItem,
-  FormControl,
-  InputLabel,
-  FormHelperText,
-} from "@mui/material";
-import { Control, Controller, FieldValues, Path } from "react-hook-form";
+import { SelectProps, Select, MenuItem, FormControl, InputLabel, FormHelperText } from '@mui/material'
+import { Control, Controller, FieldValues, Path } from 'react-hook-form'
 
 export interface IOption {
-  label: string;
-  value: number | string;
+  label: string
+  value: number | string
 }
 
 interface IProps<T extends FieldValues>
-  extends Pick<
-    SelectProps,
-    "sx" | "className" | "size" | "variant" | "disabled"
-  > {
-  label?: string;
-  control: Control<T>;
-  name: Path<T>;
-  options?: IOption[];
-  helperText?: string;
+  extends Pick<SelectProps, 'sx' | 'className' | 'size' | 'variant' | 'disabled'> {
+  label?: string
+  control: Control<T>
+  name: Path<T>
+  options?: IOption[]
+  helperText?: string
 }
-export default function BaseSelect<T extends FieldValues = FieldValues>(
-  props: IProps<T>
-) {
-  const { label, options, helperText, sx, ...rest } = props;
+export default function BaseSelect<T extends FieldValues = FieldValues>(props: IProps<T>) {
+  const { label, options, helperText, sx, ...rest } = props
 
   return (
     <Controller
@@ -50,10 +38,10 @@ export default function BaseSelect<T extends FieldValues = FieldValues>(
                   fontSize: 15,
                   height: 30,
                   borderRadius: 0,
-                  boxShadow: "none",
-                  "& .MuiList-padding": {
-                    padding: 0,
-                  },
+                  boxShadow: 'none',
+                  '& .MuiList-padding': {
+                    padding: 0
+                  }
                 }}
                 key={index}
                 value={option.value}
@@ -70,5 +58,5 @@ export default function BaseSelect<T extends FieldValues = FieldValues>(
         </FormControl>
       )}
     />
-  );
+  )
 }

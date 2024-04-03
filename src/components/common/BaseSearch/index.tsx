@@ -1,39 +1,39 @@
-import { useState } from "react";
+import { useState } from 'react'
 
-import { TextField, TextFieldProps } from "@mui/material";
-import useDebounce from "hooks/useDebounce";
-import { SearchOutlined } from "@mui/icons-material";
+import { TextField, TextFieldProps } from '@mui/material'
+import useDebounce from 'hooks/useDebounce'
+import { SearchOutlined } from '@mui/icons-material'
 
 interface IBaseSearchProps
   extends Pick<
     TextFieldProps,
-    | "fullWidth"
-    | "label"
-    | "variant"
-    | "disabled"
-    | "InputProps"
-    | "sx"
-    | "placeholder"
-    | "InputLabelProps"
-    | "className"
-    | "type"
-    | "hidden"
-    | "size"
-    | "helperText"
-    | "multiline"
-    | "rows"
+    | 'fullWidth'
+    | 'label'
+    | 'variant'
+    | 'disabled'
+    | 'InputProps'
+    | 'sx'
+    | 'placeholder'
+    | 'InputLabelProps'
+    | 'className'
+    | 'type'
+    | 'hidden'
+    | 'size'
+    | 'helperText'
+    | 'multiline'
+    | 'rows'
   > {
-  lable?: string;
-  searchInput?: string;
-  setSearchInput: (value?: string) => void;
+  lable?: string
+  searchInput?: string
+  setSearchInput: (value?: string) => void
 }
 
 export function BaseSearch(props: IBaseSearchProps) {
-  const { label, searchInput, setSearchInput } = props;
+  const { label, searchInput, setSearchInput } = props
 
-  const [value, setValue] = useState<string | undefined>(searchInput);
+  const [value, setValue] = useState<string | undefined>(searchInput)
 
-  useDebounce(() => setSearchInput(value), 500, [value]);
+  useDebounce(() => setSearchInput(value), 500, [value])
 
   return (
     <TextField
@@ -43,8 +43,8 @@ export function BaseSearch(props: IBaseSearchProps) {
       value={value}
       onChange={(e) => setValue(e.target.value)}
       InputProps={{
-        endAdornment: <SearchOutlined sx={{ fontSize: 14 }} />,
+        endAdornment: <SearchOutlined sx={{ fontSize: 14 }} />
       }}
     />
-  );
+  )
 }

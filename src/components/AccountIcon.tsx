@@ -1,44 +1,31 @@
-import { AccountCircleRounded, Logout, Person } from "@mui/icons-material";
-import {
-  Box,
-  Divider,
-  IconButton,
-  ListItemIcon,
-  ListItemText,
-  MenuItem,
-  MenuList,
-  Popover,
-  Tooltip,
-  Typography,
-} from "@mui/material";
-import React, { useState } from "react";
-import BaseBackdrop from "./common/BaseBackdrop";
+import { AccountCircleRounded } from '@mui/icons-material'
+import { Box, Divider, IconButton, ListItemText, MenuItem, MenuList, Popover, Tooltip, Typography } from '@mui/material'
+import React, { useState } from 'react'
+import BaseBackdrop from './common/BaseBackdrop'
 
 interface IProps {
-  user?: any;
-  sessionStatus: "loading" | "authenticated" | "unauthenticated";
+  user?: { name: string; email: string }
+  sessionStatus: 'loading' | 'authenticated' | 'unauthenticated'
 }
 
 function AccountIcon(props: IProps) {
-  const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
-  const [loggingOut, setLoggingOut] = useState(false);
+  const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null)
+  // const [loggingOut, setLoggingOut] = useState(false)
 
-  const open = Boolean(anchorEl);
-  const id = open ? "simple-popover" : undefined;
+  const open = Boolean(anchorEl)
+  const id = open ? 'simple-popover' : undefined
 
-  const handleClick = (
-    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
-  ) => {
-    setAnchorEl(event.currentTarget);
-  };
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    setAnchorEl(event.currentTarget)
+  }
 
   const handleClose = () => {
-    setAnchorEl(null);
-  };
+    setAnchorEl(null)
+  }
 
   return (
     <>
-      <BaseBackdrop open={loggingOut} description={"ログアウト中です。"} />
+      <BaseBackdrop open={false} description={'ログアウト中です。'} />
       <IconButton aria-describedby={id} onClick={handleClick}>
         <AccountCircleRounded sx={{ width: 40, height: 40 }} />
       </IconButton>
@@ -48,12 +35,12 @@ function AccountIcon(props: IProps) {
         anchorEl={anchorEl}
         onClose={handleClose}
         anchorOrigin={{
-          vertical: "bottom",
-          horizontal: "right",
+          vertical: 'bottom',
+          horizontal: 'right'
         }}
         transformOrigin={{
-          horizontal: "right",
-          vertical: "top",
+          horizontal: 'right',
+          vertical: 'top'
         }}
       >
         <MenuList>
@@ -63,34 +50,45 @@ function AccountIcon(props: IProps) {
                 <Typography noWrap>{props.user?.name}</Typography>
               </Tooltip>
               <Tooltip title={props.user?.email}>
-                <Typography
-                  color={(theme) => theme.palette.text.secondary}
-                  variant="body2"
-                  display="block"
-                  noWrap
-                >
+                <Typography color={(theme) => theme.palette.text.secondary} variant='body2' display='block' noWrap>
                   {props.user?.email}
                 </Typography>
               </Tooltip>
             </Box>
           </MenuItem>
           <Divider sx={{ mx: 1 }} />
-          <MenuItem onClick={() => {}}>
+          <MenuItem
+            onClick={() => {
+              console.log('a')
+            }}
+          >
             <ListItemText>マイページ</ListItemText>
           </MenuItem>
-          <MenuItem onClick={() => {}}>
+          <MenuItem
+            onClick={() => {
+              console.log('a')
+            }}
+          >
             <ListItemText>マイページ</ListItemText>
           </MenuItem>
-          <MenuItem onClick={() => {}}>
+          <MenuItem
+            onClick={() => {
+              console.log('a')
+            }}
+          >
             <ListItemText>マイページ</ListItemText>
           </MenuItem>
-          <MenuItem onClick={() => {}}>
+          <MenuItem
+            onClick={() => {
+              console.log('a')
+            }}
+          >
             <ListItemText>ログアウト</ListItemText>
           </MenuItem>
         </MenuList>
       </Popover>
     </>
-  );
+  )
 }
 
-export default AccountIcon;
+export default AccountIcon
