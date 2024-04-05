@@ -1,22 +1,16 @@
 import ReactDOM from 'react-dom/client'
+
+import './i18n'
 import App from './App'
-import RootProvider from './providers/RootProvider'
-import { ToastContainer } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
+import 'assets/fonts/Kosugi/Kosugi-Regular.ttf'
+import 'assets/fonts/Roboto/Roboto-Regular.ttf'
 import './index.css'
-import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline'
+
+import RootProvider from './providers/RootProvider'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <>
     <RootProvider>
-      <ToastContainer
-        position='bottom-left'
-        icon={({ type }) => {
-          if (type === 'success') {
-            return <CheckCircleOutlineIcon color='success' />
-          }
-        }}
-      />
       <App />
     </RootProvider>
   </>

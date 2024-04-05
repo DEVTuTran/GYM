@@ -1,5 +1,5 @@
 import { Card, CardContent, CardProps, Stack, Typography } from '@mui/material'
-import { FLexBox, StyledButtonCancel, StyledButtonDefault, StyledButtonText } from 'Styles'
+import { FLexBox, StyledButtonCancel, StyledButtonDefault, StyledButtonText } from 'styles'
 import { ReactNode } from 'react'
 import { BaseChip } from '../BaseChip'
 

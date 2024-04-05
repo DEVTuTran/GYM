@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 import { Box, Typography } from '@mui/material'
 
-import { FLexBox, StyleTitle, StyledButtonDefault } from 'Styles'
+import { FLexBox, StyleTitle, StyledButtonDefault } from 'styles'
 import { BaseCard } from 'components/common/BaseCard'
 import { BaseSearch } from 'components/common/BaseSearch'
 

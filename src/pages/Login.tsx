@@ -6,7 +6,7 @@ import { EFormUIState } from '../enums'
 import { useNavigate } from 'react-router-dom'
 import { yupResolver } from '@hookform/resolvers/yup'
 import loginSchema from '../libs/validation/login'
-import { FLexBox } from '../Styles'
+import { FLexBox } from '../styles'
 
 function Login() {
   const navigate = useNavigate()

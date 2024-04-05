@@ -1,4 +1,4 @@
-import { ReactNode, useState } from 'react'
+import { ReactNode, useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
 import MenuIcon from '@mui/icons-material/Menu'
@@ -30,9 +30,13 @@ import {
   StoreOutlined
 } from '@mui/icons-material'
 import BaseSelectField from 'components/common/BaseSelectField'
-import { FLexBox, StyleLable } from 'Styles'
+import { FLexBox, StyleLable } from 'styles'
 import { ModalSetup } from 'components/Modal/ModalSetup'
 import { ENDPOINT } from 'constants/endpoint'
+import { useAppSelector } from 'stores/hooks'
+import { getLangAndUnitFromStore } from 'stores/reduxSlices/langAndUnitSlice'
+import { useTranslation } from 'react-i18next'
+import { ELang } from 'enums'
 
 const drawerWidth = 240
 
@@ -139,6 +143,8 @@ const Drawer = styled(MuiDrawer, {
 
 export default function BaseAuthLayout({ children }: { children: ReactNode }) {
   const location = useLocation()
+  const { lang } = useAppSelector(getLangAndUnitFromStore)
+  const { i18n } = useTranslation()
 
   const [isOpenSidebar, toggleSidebar] = useToggle(true)
   const [isShowPopup, togglePopup] = useToggle(false)
@@ -147,6 +153,20 @@ export default function BaseAuthLayout({ children }: { children: ReactNode }) {
   const handleListItemClick = (pathName: string) => {
     setSelectedPath(pathName)
   }
+
+  const handleChangeLng = (value: string) => {
+    i18n.changeLanguage(value)
+  }
+
+  useEffect(() => {
+    if (lang === ELang.JP) {
+      document.body.style.fontFamily = 'Kosugi'
+    } else {
+      document.body.style.fontFamily = 'Roboto'
+    }
+    handleChangeLng(lang)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [lang])
 
   return (
     <Box sx={{ display: 'flex' }} lang='en'>

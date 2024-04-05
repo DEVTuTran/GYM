@@ -1,11 +1,9 @@
 import { Box, Divider, Stack, Typography } from '@mui/material'
-import { FLexBox, StyleTitle, StyledButtonDefault, StyledButtonConfirm } from 'Styles'
+import { FLexBox, StyleTitle, StyledButtonDefault, StyledButtonConfirm } from 'styles'
 import CardNotification from 'components/Card/CardNotification'
 import { formatDate } from 'utils/common'
 
-type Props = {}
-
-export default function Dashboard({}: Props) {
+export default function Dashboard() {
   return (
     <Box>
       <StyleTitle variant='h1'>Dashboard</StyleTitle>

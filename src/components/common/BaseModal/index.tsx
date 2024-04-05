@@ -1,15 +1,14 @@
 import { useMemo } from 'react'
 
-import { StyledComponent } from '@emotion/styled'
-import { ButtonBaseOwnProps, ExtendButtonBase, Stack, SxProps, Theme } from '@mui/material'
+import { Stack, SxProps, Theme } from '@mui/material'
 import Backdrop from '@mui/material/Backdrop'
 import Box from '@mui/material/Box'
-import Button, { ButtonOwnProps, ButtonProps, ButtonTypeMap } from '@mui/material/Button'
+import { ButtonProps } from '@mui/material/Button'
 import Fade from '@mui/material/Fade'
 import Modal from '@mui/material/Modal'
 import Typography from '@mui/material/Typography'
 
-import { StyledButtonConfirm, StyledButtonDefault } from 'Styles'
+import { StyledButtonConfirm, StyledButtonDefault } from 'styles'
 
 interface IProps {
   open: boolean
@@ -31,13 +30,10 @@ interface IProps {
   cancelProps?: ButtonProps
   isBgError?: boolean
   onOk?: () => void
-  OkComponent?:
-    | ExtendButtonBase<ButtonTypeMap<{}, 'button'>>
-    | StyledComponent<ButtonOwnProps & Omit<ButtonBaseOwnProps, 'classes'>, {}, {}>
   backdropClick?: boolean
 }
 
-export default function BaseModal({ OkComponent = Button, backdropClick = true, ...props }: IProps) {
+export default function BaseModal({ backdropClick = true, ...props }: IProps) {
   const { modalStyle, titleWrapperStyle } = useMemo(() => {
     let modalWidthStyle: SxProps<Theme> = {}
 
@@ -77,7 +73,7 @@ export default function BaseModal({ OkComponent = Button, backdropClick = true, 
   const showBtnCancel = props.showBtnCancel || !!props.cancelText
   const showBtnOk = props.showBtnOk || !!props.okText
 
-  const handleCancel = (event: Object, reason: string) => {
+  const handleCancel = (reason: string) => {
     if (reason === 'backdropClick' && !backdropClick) {
       return
     }

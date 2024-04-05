@@ -1,7 +1,7 @@
 import { Box } from '@mui/material'
 import { ReactNode } from 'react'
 
-import { BodyContainer } from 'Styles'
+import { BodyContainer } from 'styles'
 import { Helmet } from 'react-helmet'
 
 function BaseLayout({ children }: { children: ReactNode }) {

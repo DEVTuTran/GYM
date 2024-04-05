@@ -51,6 +51,7 @@ const palette: PaletteOptions = {
 const themes = createTheme({
   palette,
   typography: {
+    fontFamily: 'inherit',
     h1: {
       fontSize: '40px',
       fontWeight: 500

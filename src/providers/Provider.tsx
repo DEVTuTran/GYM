@@ -18,7 +18,7 @@ const ToastContext = createContext<{
   success: (content: Omit<ToastProps, 'id' | 'severity'>) => void
   // eslint-disable-next-line no-unused-vars
   error: (content: Omit<ToastProps, 'id' | 'severity'>) => void
-  // eslint-disable-next-line no-unused-vars
+  // eslint-disable-next-line no-unused-vars, @typescript-eslint/no-explicit-any
   handleApiError: (err?: any) => void
   // eslint-disable-next-line no-unused-vars
   handleFormError: (err?: object) => void

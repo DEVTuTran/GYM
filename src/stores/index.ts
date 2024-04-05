@@ -1,12 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { combineReducers } from 'redux'
 
-import { counterReducer } from 'stores/reducers/counter'
+import langAndUnitReducer from 'stores/reduxSlices/langAndUnitSlice'
 import { isNotProduction } from 'utils/common'
 
 const rootReducer = combineReducers({
-  counter: counterReducer,
-  counterReducer
+  langAndUnit: langAndUnitReducer
 })
 
 export const store = configureStore({

@@ -20,14 +20,6 @@
     url("./assets/fonts/Roboto/Roboto-Regular.ttf") format("woff");
 }
 
-html:lang(ja) {
-  font-family: "Kosugi";
-}
-
-html:lang(en) {
-  font-family: "Roboto";
-}
-
 body {
   margin: 0;
 }

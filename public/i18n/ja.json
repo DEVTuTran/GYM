@@ -1,0 +1,19 @@
+{
+    "title": "Multi-language app",
+    "label": "Select another language!",
+    "about": "About me",
+    "home": "Home",
+    "user": "My name is: {{name}}",
+    "dashboard":{},
+    "analytic":{},
+    "bussines":{},
+    "facility":{},
+    "login":{},
+    "machine":{},
+    "staff":{},
+    "modal":{
+        "setup":{
+            "title":"の削除確認"
+        }
+    }
+}

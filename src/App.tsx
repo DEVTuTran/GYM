@@ -20,24 +20,16 @@ function App() {
     <Routes>
       <Route path='*' element={<NotFound />} />
       <Route path={ENDPOINT.LOGIN} element={<Login />} />
-      {/* <Route element={<ProtectedRoute />}>
+      <Route element={<ProtectedRoute />}>
         <Route
-          path="/"
+          path={ENDPOINT.DASHBOARD}
           element={
             <BaseAuthLayout>
               <Dashboard />
             </BaseAuthLayout>
           }
         />
-      </Route> */}
-      <Route
-        path={ENDPOINT.DASHBOARD}
-        element={
-          <BaseAuthLayout>
-            <Dashboard />
-          </BaseAuthLayout>
-        }
-      />
+      </Route>
       <Route
         path={ENDPOINT.USERS}
         element={

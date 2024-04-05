@@ -24,3 +24,12 @@ export enum EDay {
   '土曜日',
   '日曜日'
 }
+
+export enum ELang {
+  EN = 'en',
+  JP = 'ja'
+}
+
+export enum EUnit {
+  KGM = 'kgm'
+}

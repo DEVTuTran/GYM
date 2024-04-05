@@ -12,6 +12,27 @@ export const isNotProduction = () => {
 
 export const timeToNumericString = (time: string) => time.replace(':', '')
 
+export const setDataToLocalStorage = (key: string, value: any) => {
+  console.log(value)
+
+  if (typeof window !== 'undefined' && value) {
+    const newValue = JSON.stringify(value)
+    localStorage.setItem(key, newValue)
+  }
+  return
+}
+
+export const getDataFromLocalStorage = (key: string) => {
+  if (typeof window !== 'undefined') {
+    const value = localStorage.getItem(key)
+    return value ? JSON.parse(value) : undefined
+  }
+}
+
+export const clearAllDataFromLocalStorage = () => {
+  localStorage.clear()
+}
+
 export const removeFalsyProperty = (query: { [key: string]: any }) => {
   const returnQuery: Record<string, string> = {}
   Object.keys(query).forEach((key) => {

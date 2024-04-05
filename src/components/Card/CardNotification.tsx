@@ -1,5 +1,5 @@
 import { Card, CardContent, Chip, Stack, Typography } from '@mui/material'
-import { FLexBox } from 'Styles'
+import { FLexBox } from 'styles'
 import { BaseCard } from 'components/common/BaseCard'
 
 interface IProps {

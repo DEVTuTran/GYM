@@ -34,6 +34,8 @@ module.exports = {
     jest: true
   },
   rules: {
+    'no-empty-function': 'off',
+    '@typescript-eslint/no-empty-function': 'off',
     'react/react-in-jsx-scope': 'off',
     // warning <a target='_blank'> not rel="noreferrer"
     'react/jsx-no-target-blank': 'warn',

@@ -2,7 +2,7 @@ import { Select, SelectProps, MenuItem, InputLabel, FormControl, OutlinedInput }
 import { styled } from '@mui/material/styles'
 
 type BaseSelectFieldProps = {
-  name?: any
+  name?: string
   label?: string
   options: {
     value: string | number | undefined
