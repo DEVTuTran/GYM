@@ -26,6 +26,9 @@ export default function Dashboard() {
           </Box>
         </Box>
       </FLexBox>
+      <a href='https://stg.odg-innolab.com/api/v1/public/event/1710521423840/advertise' target='_blank'>
+        link
+      </a>
     </Box>
   )
 }

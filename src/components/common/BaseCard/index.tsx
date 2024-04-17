@@ -22,8 +22,8 @@ export function BaseCard(props: IBaseCardProps) {
       <CardContent sx={{ p: 2, '&:last-child': { pb: 2 } }}>
         {listType?.length && (
           <FLexBox justifyContent={'flex-start'} gap={2}>
-            {listType.map((type) => (
-              <BaseChip type={type} size='small' />
+            {listType.map((type, index) => (
+              <BaseChip type={type} size='small' key={index} />
             ))}
           </FLexBox>
         )}

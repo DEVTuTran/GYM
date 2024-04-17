@@ -10,12 +10,8 @@ export const isNotProduction = () => {
   return process.env.NODE_ENV !== 'production'
 }
 
-export const timeToNumericString = (time: string) => time.replace(':', '')
-
 export const setDataToLocalStorage = (key: string, value: any) => {
-  console.log(value)
-
-  if (typeof window !== 'undefined' && value) {
+  if (typeof window !== 'undefined' && !!value && !!key) {
     const newValue = JSON.stringify(value)
     localStorage.setItem(key, newValue)
   }
@@ -27,6 +23,7 @@ export const getDataFromLocalStorage = (key: string) => {
     const value = localStorage.getItem(key)
     return value ? JSON.parse(value) : undefined
   }
+  return undefined
 }
 
 export const clearAllDataFromLocalStorage = () => {

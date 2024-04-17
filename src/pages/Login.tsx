@@ -3,13 +3,13 @@ import BaseInputStrict from '../components/common/BaseInputStrict'
 import { useForm } from 'react-hook-form'
 import useFormUI from '../hooks/useFormUI'
 import { EFormUIState } from '../enums'
-import { useNavigate } from 'react-router-dom'
+// import { useNavigate } from 'react-router-dom'
 import { yupResolver } from '@hookform/resolvers/yup'
 import loginSchema from '../libs/validation/login'
 import { FLexBox } from '../styles'
 
 function Login() {
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
   const form = useForm<{ email: string; password: string }>({
     defaultValues: {
       email: '',
@@ -24,6 +24,7 @@ function Login() {
 
   const onSubmit = (data: { email: string; password: string }) => {
     console.log(data)
+    // navigate('/')
   }
   return (
     <Box
