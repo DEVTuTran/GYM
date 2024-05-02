@@ -1,0 +1,31 @@
+version: 1
+backend:
+  phases:
+    build:
+      commands:
+        - amplifyPush --simple
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - yarn install
+    build:
+      commands:
+        - yarn run build
+        - echo "VITE_APP_AMPLIFY_REGION" >> .env
+        - echo "VITE_APP_AMPLIFY_USER_POOL_ID" >> .env
+        - echo "VITE_APP_AMPLIFY_APP_CLIENT_ID" >> .env
+        - echo "VITE_APP_AMPLIFY_OAUTH_DOMAIN" >> .env
+        - echo "AMPLIFY_IDENTITYPOOL_ID" >> .env
+        - echo "AMPLIFY_NATIVECLIENT_ID" >> .env
+        - echo "AMPLIFY_USERPOOL_ID" >> .env
+        - echo "AMPLIFY_WEBCLIENT_ID" >> .env
+        - echo "VITE_APP_AUTH_API_URL" >> .env
+        - echo "VITE_APP_AUTH_API_KEY" >> .env
+  artifacts:
+    baseDirectory: build
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*

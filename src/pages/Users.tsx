@@ -4,9 +4,7 @@ import { BaseCard } from 'components/common/BaseCard'
 import { BaseSearch } from 'components/common/BaseSearch'
 import { useState } from 'react'
 
-interface IUsersProps {}
-
-export function Users(props: IUsersProps) {
+export default function Users() {
   const [searchInput, setSearchInput] = useState<string>()
 
   const handleConfirm = () => {}

@@ -1,12 +1,10 @@
 import { useState } from 'react'
 
-import { Box, Typography } from '@mui/material'
+import { Box } from '@mui/material'
 
-import { FLexBox, StyleTitle, StyledButtonDefault } from 'styles'
+import { StyleTitle } from 'styles'
 
-interface IAnalyticsProps {}
-
-export function Analytics(props: IAnalyticsProps) {
+export default function Analytics() {
   const [searchInput, setSearchInput] = useState<string>()
 
   const handleConfirm = () => {}

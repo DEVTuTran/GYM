@@ -6,9 +6,7 @@ import { FLexBox, StyleTitle, StyledButtonDefault } from 'styles'
 import { BaseCard } from 'components/common/BaseCard'
 import { BaseSearch } from 'components/common/BaseSearch'
 
-interface IStaffsProps {}
-
-export function Staffs(props: IStaffsProps) {
+export default function Staffs() {
   const [searchInput, setSearchInput] = useState<string>()
 
   const handleConfirm = () => {}

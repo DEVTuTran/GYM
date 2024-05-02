@@ -1,4 +1,5 @@
 import { REGEX } from 'constants/common'
+import { ENDPOINT } from 'constants/endpoint'
 import dayjs from 'dayjs'
 import { DateTimeFormat } from 'models/Common'
 
@@ -51,4 +52,11 @@ export const formatDate = (value?: number | string, format: DateTimeFormat = 'YY
     return dayjs(date.toString()).format(format)
   }
   return '-'
+}
+
+/**
+ * Redirect to logout page.
+ */
+export const redirectToLogout = () => {
+  window.location.replace(ENDPOINT.LOGOUT)
 }
