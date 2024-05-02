@@ -7,11 +7,18 @@ import 'assets/fonts/Roboto/Roboto-Regular.ttf'
 import './index.css'
 
 import RootProvider from './providers/RootProvider'
+import { QueryClientProvider } from 'react-query'
+import { ApolloProvider } from '@apollo/client'
+import { graphQlClient, queryClient } from 'configs/client'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <>
     <RootProvider>
-      <App />
+      <QueryClientProvider client={queryClient}>
+        <ApolloProvider client={graphQlClient}>
+          <App />
+        </ApolloProvider>
+      </QueryClientProvider>
     </RootProvider>
   </>
 )

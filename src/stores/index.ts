@@ -2,10 +2,13 @@ import { configureStore } from '@reduxjs/toolkit'
 import { combineReducers } from 'redux'
 
 import langAndUnitReducer from 'stores/reduxSlices/langAndUnitSlice'
+import authReducer from 'stores/reduxSlices/authSlice'
+
 import { isNotProduction } from 'utils/common'
 
 const rootReducer = combineReducers({
-  langAndUnit: langAndUnitReducer
+  langAndUnit: langAndUnitReducer,
+  auth: authReducer
 })
 
 export const store = configureStore({
@@ -14,4 +17,5 @@ export const store = configureStore({
 })
 
 export type AppState = ReturnType<typeof store.getState>
+
 export type AppDispatch = typeof store.dispatch

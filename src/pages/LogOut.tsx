@@ -1,15 +1,19 @@
 import useAuth from 'hooks/useAuth'
 import { useEffect } from 'react'
-import BaseLoadingBackDrop from 'components/common/BaseLoadingBackDrop'
 
-function Login() {
-  const { signIn } = useAuth()
+import BaseLoadingBackDrop from 'components/common/BaseLoadingBackDrop'
+import { useAppDispatch } from 'stores/hooks'
+
+function LogOut() {
+  const dispatch = useAppDispatch()
+  const { signOut } = useAuth()
 
   useEffect(() => {
     try {
-      signIn()
+      dispatch({ type: 'LOGOUT' })
+      signOut()
     } catch (error) {
-      console.log('Failed to login: ', error)
+      console.log('Failed to logout: ', error)
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
@@ -17,4 +21,4 @@ function Login() {
   return <BaseLoadingBackDrop />
 }
 
-export default Login
+export default LogOut

@@ -33,3 +33,7 @@ export enum ELang {
 export enum EUnit {
   KGM = 'kgm'
 }
+
+export enum HttpStatusCode {
+  Unauthorized = 401
+}

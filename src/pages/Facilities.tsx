@@ -6,9 +6,7 @@ import { FLexBox, StyleTitle, StyledButtonDefault } from 'styles'
 import { BaseCard } from 'components/common/BaseCard'
 import { BaseSearch } from 'components/common/BaseSearch'
 
-interface IFacilitiesProps {}
-
-export function Facilities(props: IFacilitiesProps) {
+export default function Facilities() {
   const [searchInput, setSearchInput] = useState<string>()
 
   const handleConfirm = () => {}

@@ -1,0 +1,9 @@
+export const APP_PROD = import.meta.env.VITE_APP_PRODUCTION
+export const APP_DEV = import.meta.env.VITE_APP_DEVELOPMENT
+export const API_URL = import.meta.env.VITE_APP_API_URL
+export const AUTH_API_URL = import.meta.env.VITE_APP_AUTH_API_URL
+export const AUTH_API_KEY = import.meta.env.VITE_APP_AUTH_API_KEY
+export const AMPLIFY_REGION = import.meta.env.VITE_APP_AMPLIFY_REGION
+export const AMPLIFY_USER_POOL_ID = import.meta.env.VITE_APP_AMPLIFY_USER_POOL_ID
+export const AMPLIFY_APP_CLIENT_ID = import.meta.env.VITE_APP_AMPLIFY_APP_CLIENT_ID
+export const AMPLIFY_OAUTH_DOMAIN = import.meta.env.VITE_APP_AMPLIFY_OAUTH_DOMAIN

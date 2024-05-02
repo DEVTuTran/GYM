@@ -4,9 +4,7 @@ import { BaseCard } from 'components/common/BaseCard'
 import { BaseSearch } from 'components/common/BaseSearch'
 import { useState } from 'react'
 
-interface IMachinesProps {}
-
-export function Machines(props: IMachinesProps) {
+export default function Machines() {
   const [searchInput, setSearchInput] = useState<string>()
 
   const handleConfirm = () => {}

@@ -6,9 +6,7 @@ import { FLexBox, StyleTitle, StyledButtonDefault } from 'styles'
 import { BaseCard } from 'components/common/BaseCard'
 import { BaseSearch } from 'components/common/BaseSearch'
 
-interface IBusinessProps {}
-
-export function Business(props: IBusinessProps) {
+export default function Business() {
   const [searchInput, setSearchInput] = useState<string>()
 
   const handleConfirm = () => {}
