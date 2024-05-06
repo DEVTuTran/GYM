@@ -3,11 +3,19 @@ import { defineConfig as defineVitestConfig } from 'vitest/config'
 import react from '@vitejs/plugin-react'
 import tsconfigPaths from 'vite-tsconfig-paths'
 import dns from 'dns'
+import AutoImport from 'unplugin-auto-import/vite'
 
 dns.setDefaultResultOrder('verbatim')
 
 const viteConfig = defineViteConfig({
-  plugins: [react(), tsconfigPaths()],
+  plugins: [
+    react(),
+    tsconfigPaths(),
+    AutoImport({
+      imports: ['vitest'],
+      dts: true // generate TypeScript declaration
+    })
+  ],
   server: {
     port: 3000
   },

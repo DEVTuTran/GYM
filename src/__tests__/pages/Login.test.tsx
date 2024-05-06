@@ -1,5 +1,5 @@
-import { render, screen, fireEvent, waitFor } from '@testing-library/react'
-import Login from 'pages/Login'
+// import { render, screen, fireEvent, waitFor } from '@testing-library/react'
+// import Login from 'pages/Login'
 
 describe('login page', () => {
   // const setup = () => {
@@ -52,3 +52,46 @@ describe('login page', () => {
   //   })
   // })
 })
+
+// import React from 'react'
+// import { render } from '@testing-library/react'
+// import useAuth from 'hooks/useAuth'
+// import Login from 'pages/Login'
+
+// // Mock the useAuth hook
+// jest.mock('hooks/useAuth')
+
+// describe('Login Component', () => {
+//   it('should call signIn on mount', () => {
+//     // Mock the signIn function
+//     const mockSignIn = jest.fn()
+
+//     // Mock the useAuth hook to return the mocked signIn function
+//     useAuth.mockReturnValue({ signIn: mockSignIn })
+
+//     // Render the Login component
+//     render(<Login />)
+
+//     // Assert that signIn function is called
+//     expect(mockSignIn).toHaveBeenCalled()
+//   })
+
+//   it('should handle sign-in error gracefully', () => {
+//     // Mock the signIn function to throw an error
+//     const mockSignIn = jest.fn().mockImplementation(() => {
+//       throw new Error('Sign-in error')
+//     })
+
+//     // Mock the useAuth hook to return the mocked signIn function
+//     useAuth.mockReturnValue({ signIn: mockSignIn })
+
+//     // Suppress console.error output
+//     console.error = jest.fn()
+
+//     // Render the Login component
+//     render(<Login />)
+
+//     // Assert that error message is logged to console
+//     expect(console.error).toHaveBeenCalledWith('Failed to login: ', expect.any(Error))
+//   })
+// })

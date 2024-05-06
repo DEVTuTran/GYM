@@ -5,5 +5,5 @@ export default function useDebounce(callback: () => void, delay: number, depende
   const { reset, clear } = useTimeout(callback, delay)
 
   useEffect(reset, [...dependencies, reset])
-  useEffect(clear, [])
+  useEffect(clear, [clear])
 }
