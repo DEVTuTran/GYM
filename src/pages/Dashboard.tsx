@@ -5,7 +5,7 @@ import { formatDate } from 'utils/common'
 
 export default function Dashboard() {
   return (
-    <Box>
+    <Box id="dashboard">
       <StyleTitle variant='h1'>Dashboard</StyleTitle>
       <FLexBox justifyContent={'space-between'} mt={1}>
         <Typography variant='h4'>{formatDate('1711964092453', 'YYYY年MM月DD日')}</Typography>
